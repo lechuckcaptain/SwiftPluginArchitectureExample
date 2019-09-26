@@ -14,9 +14,5 @@ print("Start plugin loading")
 let pluginHost = PluginHost()
 let path = Bundle.main.bundlePath
 pluginHost.loadPluginsFromPath(path: ".")
-pluginHost.plugins.forEach {
-    $0.doSomething()
-}
-
 print("End plugin loading")
 

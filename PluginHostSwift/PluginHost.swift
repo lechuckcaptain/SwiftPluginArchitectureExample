@@ -16,19 +16,23 @@ class PluginHost
     func loadPluginsFromPath(path: String)
     {
         let fileManager = FileManager.default
-        let bundles = try? fileManager.contentsOfDirectory(atPath: path).filter { $0.hasSuffix("framework") }.compactMap { $0 }
+        let bundles = try? fileManager.contentsOfDirectory(atPath: path).filter {
+            $0.hasSuffix("framework") || $0.hasSuffix("bundle")
+        }.compactMap { $0 }
+
         if let bundles = bundles {
             print(bundles)
 
-            for name in bundles {
-                print("Loading framework: \(name)")
+            for fullName in bundles {
+                print("Loading framework: \(fullName)")
 
-                if let bundle = Bundle(path: name), bundle.load() {
+                if let bundle = Bundle(path: fullName), bundle.load(),
+                   let name = fullName.split(separator: ".").first {
 
-                    let typeNamed = bundle.classNamed("One.Plugin") as? NSObject.Type
-                    let typeNS = NSClassFromString("One.Plugin") as? NSObject.Type
-                    let typeNamedV2 = bundle.classNamed("One.PluginV2") as? NSObject.Type
-                    let typeNSV2 = NSClassFromString("One.PluginV2") as? NSObject.Type
+                    let typeNamed = bundle.classNamed(name + ".Plugin") as? NSObject.Type
+                    let typeNS = NSClassFromString(name + ".Plugin") as? NSObject.Type
+                    let typeNamedV2 = bundle.classNamed(name + ".PluginV2") as? NSObject.Type
+                    let typeNSV2 = NSClassFromString(name + ".PluginV2") as? NSObject.Type
                     let typePrincipal = bundle.principalClass as? NSObject.Type
 
                     print("From bundle.classNamed: \(initPlugin(from: typeNamed)?.description ?? "")" )

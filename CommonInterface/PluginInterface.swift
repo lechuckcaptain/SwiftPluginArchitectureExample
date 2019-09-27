@@ -13,4 +13,14 @@ public protocol PluginInterface: CustomStringConvertible {
     var name: String { get }
 
     func doSomething()
+
+    init()
 }
+
+extension PluginInterface {
+
+    public var description: String {
+        return "Plugin \(name)"
+    }
+}
+

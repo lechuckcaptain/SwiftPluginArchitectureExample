@@ -32,9 +32,14 @@ class PluginHost
                 let name = bundleUrl.deletingPathExtension().lastPathComponent
                 print("Name:", name)
 
-                let typeNamed = bundle.classNamed(name + ".Plugin") as? NSObject.Type
-                let typeNamedV2 = bundle.classNamed(name + ".PluginV2") as? NSObject.Type
-                let typePrincipal = bundle.principalClass as? NSObject.Type
+                let typeNamed = bundle.classNamed(name + ".Plugin") as? PluginInterface.Type
+                let typeNamedV2 = bundle.classNamed(name + ".PluginV2") as? PluginInterface.Type
+                let typePrincipal = bundle.principalClass as? PluginInterface.Type
+
+                if let cls = bundle.classNamed(name + ".Plugin") as? PluginInterface.Type {
+                    let plugin = cls.init()
+                    plugin.doSomething()
+                }
 
                 print("From bundle.classNamed: \(initPlugin(from: typeNamed)?.description ?? "")" )
                 print("From bundle.classNamed: \(initPlugin(from: typeNamedV2)?.description ?? "")" )
@@ -43,10 +48,11 @@ class PluginHost
         }
     }
 
-    func initPlugin(from type: NSObject.Type?) -> PluginInterface? {
+    func initPlugin(from type: PluginInterface.Type?) -> PluginInterface? {
 
-        if let t = type, let p = t.init() as? PluginInterface {
-            return p
+        if let cls = type {
+            let plugin = cls.init()
+            plugin.doSomething()
         }
 
         return nil

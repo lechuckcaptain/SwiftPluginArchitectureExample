@@ -9,20 +9,28 @@
 import Foundation
 import CommonInterface
 
-public class Plugin : NSObject, PluginInterface
+public class Plugin : PluginInterface
 {
     public func doSomething() {
         print("\(name) is doing something")
     }
 
     public var name = "Bundled"
+
+    public required init() {
+
+    }
 }
 
-public class PluginV2 : NSObject, PluginInterface
+public class PluginV2 : PluginInterface
 {
     public func doSomething() {
         print("\(name) is doing something")
     }
 
     public var name = "BundledV2"
+
+    public required init() {
+
+    }
 }

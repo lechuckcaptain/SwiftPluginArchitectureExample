@@ -14,5 +14,9 @@ print("Start plugin loading")
 let pluginHost = PluginHost()
 let mainURL = Bundle.main.bundleURL
 pluginHost.loadPlugins(at: mainURL)
+print("Calling plugins func")
+pluginHost.plugins.forEach {
+    $0.doSomething()
+}
 print("End plugin loading")
 

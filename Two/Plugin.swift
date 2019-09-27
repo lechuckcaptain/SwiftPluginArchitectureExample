@@ -1,8 +1,8 @@
 //
 //  Plugin.swift
-//  Bundle
+//  Two
 //
-//  Created by Marco Pagliari on 26/09/2019.
+//  Created by Marco Pagliari on 27/09/2019.
 //  Copyright © 2019 Marco Pagliari. All rights reserved.
 //
 
@@ -15,7 +15,7 @@ public class Plugin : PluginInterface
         print("\(name) is doing something")
     }
 
-    public var name = "Bundled"
+    public var name = "Two.Bundle.Plugin"
 
     public required init() {
 
@@ -28,7 +28,7 @@ public class PluginV2 : PluginInterface
         print("\(name) is doing something")
     }
 
-    public var name = "BundledV2"
+    public var name = "Two.Bundle.PluginV2"
 
     public required init() {
 

@@ -7,7 +7,7 @@ public class Plugin : PluginInterface
         print("\(name) is doing something")
     }
 
-    public var name = "One"
+    public var name = "One.Framework.Plugin"
 
     public required init() {
 
@@ -20,7 +20,7 @@ public class PluginV2 : PluginInterface
         print("\(name) is doing something")
     }
 
-    public var name = "OneV2"
+    public var name = "One.Framework.PluginV2"
 
     public required init() {
 

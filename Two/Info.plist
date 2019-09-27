@@ -21,6 +21,6 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2019 Marco Pagliari. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
-	<string>Bundle.Plugin</string>
+	<string>Two.Plugin</string>
 </dict>
 </plist>

@@ -13,38 +13,32 @@ class PluginHost
 {
     var plugins: [PluginInterface] = []
 
-    func loadPluginsFromPath(path: String)
-    {
+    func loadPlugins(at url: URL) {
+
         let fileManager = FileManager.default
-        let bundles = try? fileManager.contentsOfDirectory(atPath: path).filter {
-            $0.hasSuffix("framework") || $0.hasSuffix("bundle")
-        }.compactMap { $0 }
 
-        if let bundles = bundles {
-            print(bundles)
+        let bundles = (try? fileManager.contentsOfDirectory(at: url, includingPropertiesForKeys: nil)
+            .filter { $0.pathExtension == "bundle"
+                || $0.pathExtension == "framework"
+            }) ?? []
 
-            for fullName in bundles {
-                print("Loading framework: \(fullName)")
+        print("Loaded bundles \(bundles.map { $0.lastPathComponent })")
 
-                if let bundle = Bundle(path: fullName), bundle.load(),
-                   let name = fullName.split(separator: ".").first {
+        for bundleUrl in bundles {
+            print("Loading framework: \(bundleUrl.lastPathComponent)")
 
-                    let typeNamed = bundle.classNamed(name + ".Plugin") as? NSObject.Type
-                    let typeNS = NSClassFromString(name + ".Plugin") as? NSObject.Type
-                    let typeNamedV2 = bundle.classNamed(name + ".PluginV2") as? NSObject.Type
-                    let typeNSV2 = NSClassFromString(name + ".PluginV2") as? NSObject.Type
-                    let typePrincipal = bundle.principalClass as? NSObject.Type
+            if let bundle = Bundle(url: bundleUrl) {
 
-                    print("From bundle.classNamed: \(initPlugin(from: typeNamed)?.description ?? "")" )
-                    print("From NSClassFromString: \(initPlugin(from: typeNS)?.description ?? "")" )
+                let name = bundleUrl.deletingPathExtension().lastPathComponent
+                print("Name:", name)
 
-                    print("From bundle.classNamed: \(initPlugin(from: typeNamedV2)?.description ?? "")" )
-                    print("From NSClassFromString: \(initPlugin(from: typeNSV2)?.description ?? "")" )
+                let typeNamed = bundle.classNamed(name + ".Plugin") as? NSObject.Type
+                let typeNamedV2 = bundle.classNamed(name + ".PluginV2") as? NSObject.Type
+                let typePrincipal = bundle.principalClass as? NSObject.Type
 
-                    print("From bundle.principalClass: \(initPlugin(from: typePrincipal)?.description ?? "")" )
-
-                    bundle.unload()
-                }
+                print("From bundle.classNamed: \(initPlugin(from: typeNamed)?.description ?? "")" )
+                print("From bundle.classNamed: \(initPlugin(from: typeNamedV2)?.description ?? "")" )
+                print("From bundle.principalClass: \(initPlugin(from: typePrincipal)?.description ?? "")" )
             }
         }
     }

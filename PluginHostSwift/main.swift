@@ -12,7 +12,7 @@ import CommonInterface
 print("Start plugin loading")
 
 let pluginHost = PluginHost()
-let path = Bundle.main.bundlePath
-pluginHost.loadPluginsFromPath(path: ".")
+let mainURL = Bundle.main.bundleURL
+pluginHost.loadPlugins(at: mainURL)
 print("End plugin loading")
 

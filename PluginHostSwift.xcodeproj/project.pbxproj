@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A93173E62433404500353F93 /* CommonInterfaceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93173E52433404500353F93 /* CommonInterfaceTest.swift */; };
+		A93173E82433404500353F93 /* CommonInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FCD9B4233BC3F200FE630E /* CommonInterface.framework */; };
 		A9A6C3EC233E109E001A76AF /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A6C3EB233E109E001A76AF /* Plugin.swift */; };
 		A9FCD9A9233BC3DC00FE630E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FCD9A8233BC3DC00FE630E /* main.swift */; };
 		A9FCD9BD233C101E00FE630E /* PluginInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FCD9BC233C101E00FE630E /* PluginInterface.swift */; };
@@ -17,6 +19,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A93173E92433404500353F93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9FCD99D233BC3DC00FE630E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9FCD9B3233BC3F200FE630E;
+			remoteInfo = CommonInterface;
+		};
 		A9FCD9C1233C106500FE630E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A9FCD99D233BC3DC00FE630E /* Project object */;
@@ -50,6 +59,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A93173E32433404500353F93 /* CommonInterfaceTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonInterfaceTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A93173E52433404500353F93 /* CommonInterfaceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInterfaceTest.swift; sourceTree = "<group>"; };
+		A93173E72433404500353F93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9A6C3E4233E1088001A76AF /* Two.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Two.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A6C3E6233E1088001A76AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9A6C3EA233E109D001A76AF /* Two-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Two-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -66,6 +78,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A93173E02433404500353F93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A93173E82433404500353F93 /* CommonInterface.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A9A6C3E1233E1088001A76AF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -98,6 +118,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A93173E42433404500353F93 /* CommonInterfaceTest */ = {
+			isa = PBXGroup;
+			children = (
+				A93173E52433404500353F93 /* CommonInterfaceTest.swift */,
+				A93173E72433404500353F93 /* Info.plist */,
+			);
+			path = CommonInterfaceTest;
+			sourceTree = "<group>";
+		};
 		A9A6C3E5233E1088001A76AF /* Two */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +144,7 @@
 				A9FCD9B5233BC3F200FE630E /* CommonInterface */,
 				A9FCD9CC233C110A00FE630E /* One */,
 				A9A6C3E5233E1088001A76AF /* Two */,
+				A93173E42433404500353F93 /* CommonInterfaceTest */,
 				A9FCD9A6233BC3DC00FE630E /* Products */,
 				A9FCD9BE233C106500FE630E /* Frameworks */,
 			);
@@ -127,6 +157,7 @@
 				A9FCD9B4233BC3F200FE630E /* CommonInterface.framework */,
 				A9FCD9CB233C110A00FE630E /* One.framework */,
 				A9A6C3E4233E1088001A76AF /* Two.bundle */,
+				A93173E32433404500353F93 /* CommonInterfaceTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,6 +216,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		A93173E22433404500353F93 /* CommonInterfaceTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A93173ED2433404500353F93 /* Build configuration list for PBXNativeTarget "CommonInterfaceTest" */;
+			buildPhases = (
+				A93173DF2433404500353F93 /* Sources */,
+				A93173E02433404500353F93 /* Frameworks */,
+				A93173E12433404500353F93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A93173EA2433404500353F93 /* PBXTargetDependency */,
+			);
+			name = CommonInterfaceTest;
+			productName = CommonInterfaceTest;
+			productReference = A93173E32433404500353F93 /* CommonInterfaceTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A9A6C3E3233E1088001A76AF /* Two */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9A6C3E7233E1088001A76AF /* Build configuration list for PBXNativeTarget "Two" */;
@@ -263,10 +312,13 @@
 		A9FCD99D233BC3DC00FE630E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Marco Pagliari";
 				TargetAttributes = {
+					A93173E22433404500353F93 = {
+						CreatedOnToolsVersion = 11.4;
+					};
 					A9A6C3E3233E1088001A76AF = {
 						CreatedOnToolsVersion = 11.0;
 						LastSwiftMigration = 1100;
@@ -301,11 +353,19 @@
 				A9FCD9B3233BC3F200FE630E /* CommonInterface */,
 				A9FCD9CA233C110A00FE630E /* One */,
 				A9A6C3E3233E1088001A76AF /* Two */,
+				A93173E22433404500353F93 /* CommonInterfaceTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A93173E12433404500353F93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A9A6C3E2233E1088001A76AF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -330,6 +390,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A93173DF2433404500353F93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A93173E62433404500353F93 /* CommonInterfaceTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A9A6C3E0233E1088001A76AF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -366,6 +434,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A93173EA2433404500353F93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9FCD9B3233BC3F200FE630E /* CommonInterface */;
+			targetProxy = A93173E92433404500353F93 /* PBXContainerItemProxy */;
+		};
 		A9FCD9C2233C106500FE630E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A9FCD9B3233BC3F200FE630E /* CommonInterface */;
@@ -374,6 +447,44 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		A93173EB2433404500353F93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2LWXMPX64W;
+				INFOPLIST_FILE = CommonInterfaceTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = it.lechuckcaptain.CommonInterfaceTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A93173EC2433404500353F93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2LWXMPX64W;
+				INFOPLIST_FILE = CommonInterfaceTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = it.lechuckcaptain.CommonInterfaceTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		A9A6C3E8233E1088001A76AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -677,6 +788,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A93173ED2433404500353F93 /* Build configuration list for PBXNativeTarget "CommonInterfaceTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A93173EB2433404500353F93 /* Debug */,
+				A93173EC2433404500353F93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A9A6C3E7233E1088001A76AF /* Build configuration list for PBXNativeTarget "Two" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

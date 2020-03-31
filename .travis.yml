@@ -1,3 +1,5 @@
+os: osx
+osx_image: xcode11.3
 language: swift
 xcode_project: PluginHostSwift.xcodeproj # path to your xcodeproj folder
 xcode_scheme: PluginHostSwift

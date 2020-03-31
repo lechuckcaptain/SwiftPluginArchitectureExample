@@ -1,0 +1,4 @@
+language: swift
+xcode_project: PluginHostSwift.xcodeproj # path to your xcodeproj folder
+xcode_scheme: PluginHostSwift
+xcode_destination: platform=macOS
